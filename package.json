@@ -1,0 +1,25 @@
+{
+  "name": "scraper-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon --watch src src/index.js",
+    "proxy:start": "docker compose up --scale tor-proxy=10 && docker compose down --volumes"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "puppeteer": "^19.9.1",
+    "round-robin-js": "^3.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
