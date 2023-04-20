@@ -1,8 +1,14 @@
 version: '3.8'
 
 services:
-  tor-proxy:
-    image: "peterdavehello/tor-socks-proxy:latest"
+  scraper-proxy:
+    image: "scraper-proxy"
+    container_name: "scraper-proxy"
+    build:
+      context: .
+      network: host
     restart: always
     ports:
-      - "9000-9009:9150"
+      # - "9000-9003:9150"
+      - "9150:9150"
+      - "8000:8000"
